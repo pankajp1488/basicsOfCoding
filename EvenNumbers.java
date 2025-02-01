@@ -1,12 +1,29 @@
+import java.util.Scanner;
+
 public class EvenNumbers {
     public static void main(String[] args) {
-        int start = 1, end = 20; // Define the range
+        // Create a scanner object to take user input
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Even numbers between " + start + " and " + end + " are:");
-        for (int i = start; i <= end; i++) {
-            if (i % 2 == 0) { // Check if the number is even
-                System.out.print(i + " ");
+        // Prompt the user for input
+        System.out.println("Enter the number of elements you want to check:");
+        int n = scanner.nextInt(); // Number of elements to check
+
+        System.out.println("Enter " + n + " numbers:");
+
+        // Loop through and check each number
+        for (int i = 0; i < n; i++) {
+            int num = scanner.nextInt(); // Take each number from user
+
+            // Check if the number is even
+            if (num % 2 == 0) {
+                System.out.println(num + " is an even number.");
+            } else {
+                System.out.println(num + " is not an even number.");
             }
         }
+
+        // Close the scanner object
+        scanner.close();
     }
 }
